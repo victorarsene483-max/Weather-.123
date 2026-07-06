@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="weather.css">
+    <title>Weather Tracker</title>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-brand">
+        <span style="font-size:2.5rem">⛅</span>
+        <div>
+            <h1>Kenya Weather</h1>
+            <p>Live weather updates for every place</p>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="darkBtn"><i class="ti ti-moon"></i></button>
+        <button id="lightBtn" class="active"><i class="ti ti-sun"></i></button>
+    </div>
+</nav>
+
+<section class="search-section">
+    <div class="search-box">
+        <i class="ti ti-search"></i>
+        <input type="text" id="searchInput" placeholder="Search for any place...">
+        <button id="searchBtn">Search</button>
+    </div>
+    <div class="county-select">
+        <label>Kenyan Counties</label>
+        <div class="select-wrapper">
+            <i class="ti ti-map-pin"></i>
+            <select id="countySelect">
+                <option value="">Select a county</option>
+                <option value="Baringo">Baringo</option>
+                <option value="Bomet">Bomet</option>
+                <option value="Bungoma">Bungoma</option>
+                <option value="Busia">Busia</option>
+                <option value="Elgeyo-Marakwet">Elgeyo-Marakwet</option>
+                <option value="Embu">Embu</option>
+                <option value="Garissa">Garissa</option>
+                <option value="Homa Bay">Homa Bay</option>
+                <option value="Isiolo">Isiolo</option>
+                <option value="Kajiado">Kajiado</option>
+                <option value="Kakamega">Kakamega</option>
+                <option value="Kericho">Kericho</option>
+                <option value="Kiambu">Kiambu</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="Kirinyaga">Kirinyaga</option>
+                <option value="Kisii">Kisii</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Kitui">Kitui</option>
+                <option value="Kwale">Kwale</option>
+                <option value="Laikipia">Laikipia</option>
+                <option value="Lamu">Lamu</option>
+                <option value="Machakos">Machakos</option>
+                <option value="Makueni">Makueni</option>
+                <option value="Mandera">Mandera</option>
+                <option value="Marsabit">Marsabit</option>
+                <option value="Meru">Meru</option>
+                <option value="Migori">Migori</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Murang'a">Murang'a</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Nakuru">Nakuru</option>
+                <option value="Nandi">Nandi</option>
+                <option value="Narok">Narok</option>
+                <option value="Nyamira">Nyamira</option>
+                <option value="Nyandarua">Nyandarua</option>
+                <option value="Nyeri">Nyeri</option>
+                <option value="Samburu">Samburu</option>
+                <option value="Siaya">Siaya</option>
+                <option value="Taita-Taveta">Taita-Taveta</option>
+                <option value="Tana River">Tana River</option>
+                <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+                <option value="Trans-Nzoia">Trans-Nzoia</option>
+                <option value="Turkana">Turkana</option>
+                <option value="Uasin Gishu">Uasin Gishu</option>
+                <option value="Vihiga">Vihiga</option>
+                <option value="Wajir">Wajir</option>
+                <option value="West Pokot">West Pokot</option>
+            </select>
+        </div>
+    </div>
+    <button id="locationBtn">
+        <i class="ti ti-navigation"></i>
+        Use My Location
+    </button>
+</section>
+
+<section class="main-weather">
+
+    <div class="weather-hero">
+        <div class="weather-location">
+            <i class="ti ti-map-pin"></i>
+            <div>
+                <h2 id="cityName">Nairobi, Kenya</h2>
+                <p id="weatherDate">Today, 21 May 2026 • 10:30 AM</p>
+            </div>
+        </div>
+
+        <div class="weather-main">
+            <div class="temp-block">
+                <h1 id="temperature">24°C</h1>
+                <p id="weatherDesc">Partly Cloudy</p>
+                <div class="hi-lo">
+                    <span id="tempHigh">↑ 26°C</span>
+                    <span id="tempLow">↓ 17°C</span>
+                </div>
+            </div>
+            <span id="weatherIcon" style="font-size:90px">⛅</span>
+        </div>
+
+        <div class="weather-stats">
+            <div class="stat-card">
+                <i class="ti ti-droplet"></i>
+                <p>Humidity</p>
+                <strong id="humidity">65%</strong>
+            </div>
+            <div class="stat-card">
+                <i class="ti ti-wind"></i>
+                <p>Wind Speed</p>
+                <strong id="windSpeed">14 km/h</strong>
+            </div>
+            <div class="stat-card">
+                <i class="ti ti-gauge"></i>
+                <p>Pressure</p>
+                <strong id="pressure">1012 hPa</strong>
+            </div>
+            <div class="stat-card">
+                <i class="ti ti-eye"></i>
+                <p>Visibility</p>
+                <strong id="visibility">10 km</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather-details">
+        <h3>Weather Details</h3>
+        <ul class="detail-list">
+            <li>
+                <span><i class="ti ti-temperature"></i> Feels Like</span>
+                <strong id="feelsLike">25°C</strong>
+            </li>
+            <li>
+                <span><i class="ti ti-sunrise"></i> Sunrise</span>
+                <strong id="sunrise">06:35 AM</strong>
+            </li>
+            <li>
+                <span><i class="ti ti-sunset"></i> Sunset</span>
+                <strong id="sunset">06:45 PM</strong>
+            </li>
+            <li>
+                <span><i class="ti ti-sun"></i> UV Index</span>
+                <strong id="uvIndex" class="high">6 (High)</strong>
+            </li>
+            <li>
+                <span><i class="ti ti-cloud"></i> Cloud Cover</span>
+                <strong id="cloudCover">40%</strong>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="forecast-section">
+    <div class="section-header">
+        <h3>5-Day Forecast</h3>
+        <a href="#" class="view-more">View full forecast →</a>
+    </div>
+    <div class="forecast-grid" id="forecastGrid">
+        <div class="forecast-card">
+            <p class="day">Wed</p>
+            <p class="date">22 May</p>
+            <span style="font-size:36px">⛅</span>
+            <p class="f-high">25°C</p>
+            <p class="f-low">17°C</p>
+        </div>
+        <div class="forecast-card">
+            <p class="day">Thu</p>
+            <p class="date">23 May</p>
+            <span style="font-size:36px">🌧️</span>
+            <p class="f-high">22°C</p>
+            <p class="f-low">16°C</p>
+        </div>
+        <div class="forecast-card">
+            <p class="day">Fri</p>
+            <p class="date">24 May</p>
+            <span style="font-size:36px">⛅</span>
+            <p class="f-high">24°C</p>
+            <p class="f-low">18°C</p>
+        </div>
+        <div class="forecast-card">
+            <p class="day">Sat</p>
+            <p class="date">25 May</p>
+            <span style="font-size:36px">🌧️</span>
+            <p class="f-high">21°C</p>
+            <p class="f-low">15°C</p>
+        </div>
+        <div class="forecast-card">
+            <p class="day">Sun</p>
+            <p class="date">26 May</p>
+            <span style="font-size:36px">☀️</span>
+            <p class="f-high">26°C</p>
+            <p class="f-low">19°C</p>
+        </div>
+    </div>
+</section>
+
+<section class="popular-section">
+    <div class="section-header">
+        <h3>Popular Places</h3>
+        <a href="#" class="view-more">View more →</a>
+    </div>
+    <div class="places-grid" id="placesGrid">
+        <div class="place-card">
+            <img src="images/mombasa.jpeg" alt="Mombasa">
+            <div class="place-overlay">
+                <div class="place-info">
+                    <div>
+                        <p class="place-name">Mombasa</p>
+                        <p class="place-desc">Mostly Sunny ☀️</p>
+                    </div>
+                    <span class="place-temp">29°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="images/kisumu.jpeg" alt="Kisumu">
+            <div class="place-overlay">
+                <div class="place-info">
+                    <div>
+                        <p class="place-name">Kisumu</p>
+                        <p class="place-desc">Partly Cloudy ⛅</p>
+                    </div>
+                    <span class="place-temp">27°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="images/nakuru.jpeg" alt="Nakuru">
+            <div class="place-overlay">
+                <div class="place-info">
+                    <div>
+                        <p class="place-name">Nakuru</p>
+                        <p class="place-desc">Cloudy ☁️</p>
+                    </div>
+                    <span class="place-temp">22°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="images/eldoret.jpeg" alt="Eldoret">
+            <div class="place-overlay">
+                <div class="place-info">
+                    <div>
+                        <p class="place-name">Eldoret</p>
+                        <p class="place-desc">Light Rain 🌧️</p>
+                    </div>
+                    <span class="place-temp">21°C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="weather.js"></script>
+</body>
+</html>
