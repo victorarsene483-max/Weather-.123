@@ -3,8 +3,6 @@ margin:0;
 padding: 0;
 box-sizing: border-box;
 }
-.h1{
-    font-family:'Orbitron' , sans-serif;
 body{
     font-family: 'Inter',sans-serif;
     background: #0d1117;
@@ -28,6 +26,7 @@ body{
     font-size: 22px;
     font-weight: 700;
     color:white;
+    font-family:'Orbitron' , sans-serif;
 }
 .nav-brand p{
     font-size: 13px;
