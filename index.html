@@ -4,23 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="weather.css">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Weather Tracker</title>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-brand">
-        <dotlottie-player
-            src="https://assets2.lottiefiles.com/packages/lf20_xlmz9xwm.json"
-            background="transparent"
-            speed="1"
-            style="width:50px;height:50px"
-            loop
-            autoplay>
-        </dotlottie-player>
+        <span style="font-size:2.5rem">⛅</span>
         <div>
             <h1>#254 forecast</h1>
             <p>Live weather updates for every place</p>
@@ -120,15 +113,7 @@
                     <span id="tempLow">↓ 17°C</span>
                 </div>
             </div>
-            <dotlottie-player
-                id="weatherIcon"
-                src="https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json"
-                background="transparent"
-                speed="1"
-                style="width:150px;height:150px"
-                loop
-                autoplay>
-            </dotlottie-player>
+            <span id="weatherIcon" style="font-size:90px">⛅</span>
         </div>
 
         <div class="weather-stats">
@@ -192,65 +177,35 @@
         <div class="forecast-card">
             <p class="day">Wed</p>
             <p class="date">22 May</p>
-            <dotlottie-player
-                src="https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json"
-                background="transparent"
-                speed="1"
-                style="width:60px;height:60px"
-                loop autoplay>
-            </dotlottie-player>
+            <span style="font-size:36px">⛅</span>
             <p class="f-high">25°C</p>
             <p class="f-low">17°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Thu</p>
             <p class="date">23 May</p>
-            <dotlottie-player
-                src="https://assets2.lottiefiles.com/packages/lf20_bbflcs3e.json"
-                background="transparent"
-                speed="1"
-                style="width:60px;height:60px"
-                loop autoplay>
-            </dotlottie-player>
+            <span style="font-size:36px">🌧️</span>
             <p class="f-high">22°C</p>
             <p class="f-low">16°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Fri</p>
             <p class="date">24 May</p>
-            <dotlottie-player
-                src="https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json"
-                background="transparent"
-                speed="1"
-                style="width:60px;height:60px"
-                loop autoplay>
-            </dotlottie-player>
+            <span style="font-size:36px">⛅</span>
             <p class="f-high">24°C</p>
             <p class="f-low">18°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Sat</p>
             <p class="date">25 May</p>
-            <dotlottie-player
-                src="https://assets2.lottiefiles.com/packages/lf20_bbflcs3e.json"
-                background="transparent"
-                speed="1"
-                style="width:60px;height:60px"
-                loop autoplay>
-            </dotlottie-player>
+            <span style="font-size:36px">🌧️</span>
             <p class="f-high">21°C</p>
             <p class="f-low">15°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Sun</p>
             <p class="date">26 May</p>
-            <dotlottie-player
-                src="https://assets2.lottiefiles.com/packages/lf20_xlmz9xwm.json"
-                background="transparent"
-                speed="1"
-                style="width:60px;height:60px"
-                loop autoplay>
-            </dotlottie-player>
+            <span style="font-size:36px">☀️</span>
             <p class="f-high">26°C</p>
             <p class="f-low">19°C</p>
         </div>
