@@ -50,6 +50,20 @@ const countyToCityMap = {
     'West Pokot':       'Kapenguria',
 };
 
+const weatherAnimations = {
+    'Clear':        'https://assets2.lottiefiles.com/packages/lf20_xlmz9xwm.json',
+    'Clouds':       'https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json',
+    'Rain':         'https://assets2.lottiefiles.com/packages/lf20_bbflcs3e.json',
+    'Drizzle':      'https://assets2.lottiefiles.com/packages/lf20_bbflcs3e.json',
+    'Thunderstorm': 'https://assets2.lottiefiles.com/packages/lf20_lnpccfbr.json',
+    'Snow':         'https://assets2.lottiefiles.com/packages/lf20_yrqpqkjv.json',
+    'Mist':         'https://assets2.lottiefiles.com/packages/lf20_3vspqh1c.json',
+    'Fog':          'https://assets2.lottiefiles.com/packages/lf20_3vspqh1c.json',
+    'Haze':         'https://assets2.lottiefiles.com/packages/lf20_3vspqh1c.json',
+    'Dust':         'https://assets2.lottiefiles.com/packages/lf20_3vspqh1c.json',
+    'Sand':         'https://assets2.lottiefiles.com/packages/lf20_3vspqh1c.json',
+};
+
 const weatherEmojis = {
     'Clear':        '☀️',
     'Clouds':       '☁️',
@@ -66,6 +80,11 @@ const weatherEmojis = {
 
 function getEmoji(condition) {
     return weatherEmojis[condition] || '🌤️';
+}
+
+function getAnimation(condition) {
+    return weatherAnimations[condition] ||
+        'https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json';
 }
 
 function formatTime(timestamp) {
@@ -176,8 +195,7 @@ function updateMainWeather(data) {
     document.getElementById('weatherDesc').textContent =
         desc.charAt(0).toUpperCase() + desc.slice(1);
 
-    document.getElementById('weatherIcon').textContent =
-        getEmoji(condition);
+    document.getElementById('weatherIcon').setAttribute('src', getAnimation(condition));
 
     document.getElementById('tempHigh').textContent =
         `↑ ${Math.round(data.main.temp_max)}°C`;
@@ -280,7 +298,13 @@ function updateForecast(data) {
         <div class="forecast-card">
             <p class="day">${day}</p>
             <p class="date">${info.date}</p>
-            <span style="font-size:36px">${getEmoji(info.condition)}</span>
+            <dotlottie-player
+                src="${getAnimation(info.condition)}"
+                background="transparent"
+                speed="1"
+                style="width:60px;height:60px"
+                loop autoplay>
+            </dotlottie-player>
             <p class="f-high">${Math.round(info.temp_max)}°C</p>
             <p class="f-low">${Math.round(info.temp_min)}°C</p>
         </div>
@@ -331,14 +355,16 @@ function showLoading() {
     document.getElementById('cityName').textContent = 'Loading...';
     document.getElementById('temperature').textContent = '--°C';
     document.getElementById('weatherDesc').textContent = 'Fetching weather...';
-    document.getElementById('weatherIcon').textContent = '🔄';
+    document.getElementById('weatherIcon').setAttribute('src',
+        'https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json');
 }
 
 function showError(msg) {
     document.getElementById('cityName').textContent = 'Error';
     document.getElementById('weatherDesc').textContent = msg;
     document.getElementById('temperature').textContent = '--°C';
-    document.getElementById('weatherIcon').textContent = '❌';
+    document.getElementById('weatherIcon').setAttribute('src',
+        'https://assets2.lottiefiles.com/packages/lf20_yqp3brkh.json');
 }
 
 const searchInput = document.getElementById('searchInput');
