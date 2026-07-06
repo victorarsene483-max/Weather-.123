@@ -68,23 +68,6 @@ function getEmoji(condition) {
     return weatherEmojis[condition] || '🌤️';
 }
 
-function getAnimClass(condition) {
-    const map = {
-        'Clear':        'sunny',
-        'Clouds':       'cloudy',
-        'Rain':         'rainy',
-        'Drizzle':      'rainy',
-        'Thunderstorm': 'stormy',
-        'Snow':         'snowy',
-        'Mist':         'misty',
-        'Fog':          'misty',
-        'Haze':         'misty',
-        'Dust':         'misty',
-        'Sand':         'misty',
-    };
-    return map[condition] || 'cloudy';
-}
-
 function formatTime(timestamp) {
     return new Date(timestamp * 1000).toLocaleTimeString('en-KE', {
         hour: '2-digit',
@@ -193,11 +176,8 @@ function updateMainWeather(data) {
     document.getElementById('weatherDesc').textContent =
         desc.charAt(0).toUpperCase() + desc.slice(1);
 
-    const iconEl = document.getElementById('weatherIcon');
-    iconEl.textContent = getEmoji(condition);
-    iconEl.className = getAnimClass(condition);
-    iconEl.style.fontSize = '90px';
-    iconEl.style.display = 'inline-block';
+    document.getElementById('weatherIcon').textContent =
+        getEmoji(condition);
 
     document.getElementById('tempHigh').textContent =
         `↑ ${Math.round(data.main.temp_max)}°C`;
@@ -300,10 +280,7 @@ function updateForecast(data) {
         <div class="forecast-card">
             <p class="day">${day}</p>
             <p class="date">${info.date}</p>
-            <span class="weather-anim ${getAnimClass(info.condition)}"
-                  style="font-size:40px;display:inline-block;margin:8px 0">
-                ${getEmoji(info.condition)}
-            </span>
+            <span style="font-size:36px">${getEmoji(info.condition)}</span>
             <p class="f-high">${Math.round(info.temp_max)}°C</p>
             <p class="f-low">${Math.round(info.temp_min)}°C</p>
         </div>
@@ -354,22 +331,14 @@ function showLoading() {
     document.getElementById('cityName').textContent = 'Loading...';
     document.getElementById('temperature').textContent = '--°C';
     document.getElementById('weatherDesc').textContent = 'Fetching weather...';
-    const iconEl = document.getElementById('weatherIcon');
-    iconEl.textContent = '🔄';
-    iconEl.className = 'sunny';
-    iconEl.style.fontSize = '90px';
-    iconEl.style.display = 'inline-block';
+    document.getElementById('weatherIcon').textContent = '🔄';
 }
 
 function showError(msg) {
     document.getElementById('cityName').textContent = 'Error';
     document.getElementById('weatherDesc').textContent = msg;
     document.getElementById('temperature').textContent = '--°C';
-    const iconEl = document.getElementById('weatherIcon');
-    iconEl.textContent = '❌';
-    iconEl.className = '';
-    iconEl.style.fontSize = '90px';
-    iconEl.style.display = 'inline-block';
+    document.getElementById('weatherIcon').textContent = '❌';
 }
 
 const searchInput = document.getElementById('searchInput');
