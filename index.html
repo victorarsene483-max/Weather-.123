@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="weather.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Weather Tracker</title>
+    <title>#254 Forecast</title>
 </head>
 <body>
 
@@ -20,8 +19,8 @@
         </div>
     </div>
     <div class="theme-toggle">
-        <button id="darkBtn"><i class="ti ti-moon"></i></button>
-        <button id="lightBtn" class="active"><i class="ti ti-sun"></i></button>
+        <button id="darkBtn" class="active"><i class="ti ti-moon"></i></button>
+        <button id="lightBtn"><i class="ti ti-sun"></i></button>
     </div>
 </nav>
 
@@ -94,7 +93,6 @@
 </section>
 
 <section class="main-weather">
-
     <div class="weather-hero">
         <div class="weather-location">
             <i class="ti ti-map-pin"></i>
@@ -103,7 +101,6 @@
                 <p id="weatherDate">Today, 21 May 2026 • 10:30 AM</p>
             </div>
         </div>
-
         <div class="weather-main">
             <div class="temp-block">
                 <h1 id="temperature">24°C</h1>
@@ -113,9 +110,8 @@
                     <span id="tempLow">↓ 17°C</span>
                 </div>
             </div>
-            <span id="weatherIcon" style="font-size:90px">⛅</span>
+            <span id="weatherIcon" style="font-size:90px;display:inline-block">⛅</span>
         </div>
-
         <div class="weather-stats">
             <div class="stat-card">
                 <i class="ti ti-droplet"></i>
@@ -165,7 +161,6 @@
             </li>
         </ul>
     </div>
-
 </section>
 
 <section class="forecast-section">
@@ -177,35 +172,35 @@
         <div class="forecast-card">
             <p class="day">Wed</p>
             <p class="date">22 May</p>
-            <span style="font-size:36px">⛅</span>
+            <span class="weather-anim cloudy" style="font-size:40px;display:inline-block;margin:8px 0">⛅</span>
             <p class="f-high">25°C</p>
             <p class="f-low">17°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Thu</p>
             <p class="date">23 May</p>
-            <span style="font-size:36px">🌧️</span>
+            <span class="weather-anim rainy" style="font-size:40px;display:inline-block;margin:8px 0">🌧️</span>
             <p class="f-high">22°C</p>
             <p class="f-low">16°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Fri</p>
             <p class="date">24 May</p>
-            <span style="font-size:36px">⛅</span>
+            <span class="weather-anim cloudy" style="font-size:40px;display:inline-block;margin:8px 0">⛅</span>
             <p class="f-high">24°C</p>
             <p class="f-low">18°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Sat</p>
             <p class="date">25 May</p>
-            <span style="font-size:36px">🌧️</span>
+            <span class="weather-anim rainy" style="font-size:40px;display:inline-block;margin:8px 0">🌧️</span>
             <p class="f-high">21°C</p>
             <p class="f-low">15°C</p>
         </div>
         <div class="forecast-card">
             <p class="day">Sun</p>
             <p class="date">26 May</p>
-            <span style="font-size:36px">☀️</span>
+            <span class="weather-anim sunny" style="font-size:40px;display:inline-block;margin:8px 0">☀️</span>
             <p class="f-high">26°C</p>
             <p class="f-low">19°C</p>
         </div>
