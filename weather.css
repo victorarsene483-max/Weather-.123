@@ -53,7 +53,7 @@ body{
     background: #3b82f6;
     color: white;
 }
-.search-section{
+.search-section {
     display: flex;
     align-items: flex-end;
     gap: 12px;
@@ -63,7 +63,8 @@ body{
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
-.search-box{
+
+.search-box {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -72,7 +73,10 @@ body{
     border-radius: 10px;
     padding: 10px 14px;
     flex: 1;
-    min-width:200px;
+    min-width: 180px;
+    max-width: 340px;     
+}
+    
 }
 .search-box i{
     color: #8892a4;
